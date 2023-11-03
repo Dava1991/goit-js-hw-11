@@ -131,14 +131,7 @@
     text-align: center;
     text-decoration: none;
   }
-  
-  
-  
-  /**
-    |============================ 
-    | Button GO to UP
-    |============================
-  */
+
   .go-top {
     font-size: 50px;
     border: none;
@@ -160,7 +153,7 @@
   .go-top:hover {
     background-color: var(--background-grad);
   }
-  .go-top--show {
+  .show-go-top {
     display: block;
     display: flex;
     justify-content: center;

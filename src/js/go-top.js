@@ -12,10 +12,10 @@ function trackScroll() {
 
   if (scrolled > coords) {
 
-    goTopBtn.classList.add("go-top--show");
+    goTopBtn.classList.add("show-go-top");
   } else {
 
-    goTopBtn.classList.remove("go-top--show");
+    goTopBtn.classList.remove("show-go-top");
   }
 }
 
