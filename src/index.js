@@ -1,14 +1,14 @@
 import Notiflix from 'notiflix';
-import pixabayBase from './js/gallery-pixabay.js' 
-import creatMarkup from './js/create-markup.js'
+import pixabayBase from './js/photo-gallery.js' 
+import createMarkup from './js/search-form.js'
 
 
 export const refs = {
     form: document.querySelector('#search-form'),
-    dataInput: document.querySelector('.search-input'),
+    dataInput: document.querySelector('.searchin'),
     gallery: document.querySelector('.gallery'),
     loadmoreBtn: document.querySelector('.load-more'),
-    messageFinish: document.querySelector('.message-finish')
+    messageFinish: document.querySelector('.finishmas')
 }
 
 const { searchQuery } = refs.form.elements;
@@ -26,8 +26,8 @@ async function onSearchQuery(e) {
   inputDataUser = e.currentTarget.searchQuery.value.trim();
   
   if (!inputDataUser) {
-    console.log('Pleasure Input Search images...');
-    return Notiflix.Notify.failure(`Pleasure Input Search images...`);
+    console.log('Please Input Search Images...');
+    return Notiflix.Notify.failure(`Please Input Search Images...`);
   };
 
     try {
@@ -54,7 +54,7 @@ async function onSearchQuery(e) {
        refs.dataInput.value = ''; 
       } else {
        Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
-        creatMarkup(respArr);
+        createMarkup(respArr);
       };
   }
   catch (error) {
@@ -73,7 +73,7 @@ async function onLoadQuery() {
       const totalHits = resp.totalHits;
      const totalPage = Math.ceil(totalHits / respArr.length);
 
-      creatMarkup(respArr);
+      createMarkup(respArr);
       if (respArr.length < perPage) {
         refs.messageFinish.classList.remove('hidden');
         refs.loadmoreBtn.classList.add('hidden');

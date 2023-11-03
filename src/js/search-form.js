@@ -2,7 +2,7 @@ import { refs} from '../index';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-export default function creatMarkup(respArr) {
+export default function createMarkup(respArr) {
    
    const markupGel = respArr.map((
       {
